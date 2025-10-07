@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using WEBAPI_Core_DataAnnotations.Validators;
 
 namespace WEBAPI_Core_DataAnnotations.Models
 {
@@ -14,8 +15,8 @@ namespace WEBAPI_Core_DataAnnotations.Models
         public int Age { get; set; }
 
         [EmailAddress(ErrorMessage = "Invalid email format.")]
-        //[CompanyEmailAttribute]
-        public string Email { get; set; } 
+        [CompanyEmail] // ✅ uncommented to activate custom validator
+        public string Email { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Salary is required.")]
         [Range(10000, 200000, ErrorMessage = "Salary must be between 10,000 and 200,000.")]

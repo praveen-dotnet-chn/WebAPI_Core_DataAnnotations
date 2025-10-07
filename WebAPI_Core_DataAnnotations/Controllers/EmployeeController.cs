@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using WEBAPI_Core_DataAnnotations.Models;
 
-namespace WebAPI_Core_DataAnnotations.Controllers
+namespace WEBAPI_Core_DataAnnotations.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -11,7 +10,6 @@ namespace WebAPI_Core_DataAnnotations.Controllers
         [HttpPost]
         public IActionResult CreateEmployee([FromBody] Employee employee)
         {
-            // ModelState automatically validates based on DataAnnotations
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
