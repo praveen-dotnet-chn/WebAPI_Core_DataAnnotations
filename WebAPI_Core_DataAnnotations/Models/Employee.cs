@@ -15,7 +15,7 @@ namespace WEBAPI_Core_DataAnnotations.Models
         public int Age { get; set; }
 
         [EmailAddress(ErrorMessage = "Invalid email format.")]
-        [CompanyEmail] // ✅ uncommented to activate custom validator
+        [CompanyEmail] //uncommented to activate custom validator
         public string Email { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Salary is required.")]
